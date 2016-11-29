@@ -1,25 +1,29 @@
-from .chopper import chop
+import recursive
 
 
-def test_chop():
-    assert -1 == chop(3, [])
-    assert -1 == chop(3, [1])
-    assert 0 == chop(1, [1])
+def test_recursive():
+    run_tests(recursive.chop)
 
-    assert 0 == chop(1, [1, 3, 5])
-    assert 1 == chop(3, [1, 3, 5])
-    assert 2 == chop(5, [1, 3, 5])
-    assert -1 == chop(0, [1, 3, 5])
-    assert -1 == chop(2, [1, 3, 5])
-    assert -1 == chop(4, [1, 3, 5])
-    assert -1 == chop(6, [1, 3, 5])
 
-    assert 0 == chop(1, [1, 3, 5, 7])
-    assert 1 == chop(3, [1, 3, 5, 7])
-    assert 2 == chop(5, [1, 3, 5, 7])
-    assert 3 == chop(7, [1, 3, 5, 7])
-    assert -1 == chop(0, [1, 3, 5, 7])
-    assert -1 == chop(2, [1, 3, 5, 7])
-    assert -1 == chop(4, [1, 3, 5, 7])
-    assert -1 == chop(6, [1, 3, 5, 7])
-    assert -1 == chop(8, [1, 3, 5, 7])
+def run_tests(chop_function):
+    assert -1 == chop_function(3, [])
+    assert -1 == chop_function(3, [1])
+    assert 0 == chop_function(1, [1])
+
+    assert 0 == chop_function(1, [1, 3, 5])
+    assert 1 == chop_function(3, [1, 3, 5])
+    assert 2 == chop_function(5, [1, 3, 5])
+    assert -1 == chop_function(0, [1, 3, 5])
+    assert -1 == chop_function(2, [1, 3, 5])
+    assert -1 == chop_function(4, [1, 3, 5])
+    assert -1 == chop_function(6, [1, 3, 5])
+
+    assert 0 == chop_function(1, [1, 3, 5, 7])
+    assert 1 == chop_function(3, [1, 3, 5, 7])
+    assert 2 == chop_function(5, [1, 3, 5, 7])
+    assert 3 == chop_function(7, [1, 3, 5, 7])
+    assert -1 == chop_function(0, [1, 3, 5, 7])
+    assert -1 == chop_function(2, [1, 3, 5, 7])
+    assert -1 == chop_function(4, [1, 3, 5, 7])
+    assert -1 == chop_function(6, [1, 3, 5, 7])
+    assert -1 == chop_function(8, [1, 3, 5, 7])
